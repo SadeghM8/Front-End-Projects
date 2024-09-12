@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Currency Converter</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
+            <h1 class="yekan">
+                <span class="material-symbols-outlined">
+                currency_exchange
+                </span> تبدیل واحد پول</h1>
+
+            <div class="controls" id="controls">
+                <div class="control">
+                    <button id="base" data-drawer>USD</button>
+                    <input type="number" id="base-input" value="0" min="0" step="0.01">
+                </div>
+                <div class="control">
+                    <button id="target" data-drawer>EUR</button>
+                    <input type="number" id="target-input" value="0" readonly>
+                </div>
+                <button class="swap-btn" id="swap-btn"><span class="material-symbols-outlined">
+                    sync_alt
+                    </span>
+                </button>
+            </div>
+            <div class="exchange-rate">
+                <h4 class="yekan">قیمت ارز</h4>
+                <span id="exchange-rate"></span>
+            </div>
+
+            <div class="drawer" id="drawer">
+                <div class="title">
+                    <button id="dismiss-btn">
+                        <span class="material-symbols-outlined"> west </span>
+                    </button>
+                    <h3 class="yekan">واحد پول را انتخاب کنید</h3>
+                </div>
+                <div class="search">
+                    <input type="search" id="search" placeholder="Search">
+                </div>
+                <ul class="currency-list" id="currency-list">
+                </ul>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
