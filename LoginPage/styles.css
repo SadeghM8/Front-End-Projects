@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url(img/SPH6E.jpg);
+    background-size: cover;
+    background-position: fixed;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    margin-top: 6rem;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 14px;
+    box-shadow: 0px 0px 10px #ccc;
+  }
+  .container2 {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #464545;
+    color: wheat;
+    border: 1px solid #929090;
+    border-radius: 14px;
+    box-shadow: 0px 0px 10px #ccc;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 14px;
+    font-size: 1rem;
+    line-height: 1.5;
+    outline: none;
+    transition: 0.3s ease-in-out;
+  }
+  
+  input[type="password"] {
+    letter-spacing: 1px;
+  }
+  input:focus {
+    border: 1.5px solid #0ea6b1;
+  }
+  
+  button.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  
+  button.btn:hover {
+    background-color: #3e8e41;
+  }
+
+  .btn2
+  {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #0ea6b1;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  .btn2:hover
+  {
+    background-color: #178891;
+  }
+  
+  p.forgot-password {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+  
+  p.forgot-password a {
+    color: #b91f1f;
+    text-decoration: none;
+  }
+  
+  p.forgot-password a:hover {
+    text-decoration: underline;
+  }
+  
+  p.signup {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+  }
+  
+  p.signup a {
+    color: #2aabaf;
+    text-decoration: none;
+  }
+  
+  p.signup a:hover {
+    text-decoration: underline;
+  }
