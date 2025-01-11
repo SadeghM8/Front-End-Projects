@@ -1,0 +1,318 @@
+* {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg: #29272b;
+    --white: #bebebe;
+    --primary: #32ce9a;
+    --placeholder: #6a666c;
+    --main: #755cff;
+    --blue: #0062ca;
+  }
+
+  body {
+    font-family: 'Estedad', sans-serif;
+    color: wheat;
+    margin: 0;
+    padding: 0;
+    place-items: center;
+    background-image: linear-gradient(rgba(0,0,0,0.80),rgba(0,0,0,0.80)),url(images/Car-Home-page.jpg);
+    background-size: cover;
+    background-position: fixed;
+    overflow-x: hidden;
+  }
+  .wrapper {
+    width: min(325px, 80vw);
+    display: grid;
+    align-items: center;
+    &>* {
+      grid-column: 1;
+      grid-row: 1;
+      font: 1.1rem Estedad, sans-serif;
+      color: var(--white);
+    }
+    & input {
+      position: relative;
+      border: 1.5px solid var(--white);
+      border-radius: 1.5px solid var(--white);
+      outline: none;
+      background-color: transparent;
+      color: var(--white);
+      padding: 1rem;
+      z-index: 0;
+      transition: border-color 0.5s;
+      &:focus {
+        border-color: var(--primary);
+      }
+      &:focus~label,
+      &:not(:placeholder-shown)~label {
+        transform: translateY(-1.8rem)
+          scale(0.75);
+          padding: 0 0.25rem;
+          color: var(--white);
+      }
+    }
+    & label {
+      width: max-content;
+      background-color: var(--bg);
+      margin-left: 1rem;
+      color: var(--placeholder);
+      transition: transform 0.5s;
+    }
+  }
+  
+  #multiForm {
+    direction: rtl;
+    width: 100%;
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid wheat;
+    border-radius: 2rem;
+    
+    transition: .6s ease-in-out;
+  }
+  
+  #multiForm:hover {
+    transform: scale(1.01);
+    background: rgba(255, 255, 255, 0.08);
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: wheat;
+  }
+
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+  }
+
+  .error {
+    color: rgb(233, 45, 45);
+  }
+  
+  .form-group {
+    margin-bottom: 50px;
+  }
+  
+  label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.156);
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-family: 'Estedad', sans-serif;
+    line-height: 1.5;
+    transition: .4s ease-in-out;
+    outline: none;
+    color: white;
+  }
+  input[type="text"]:hover,
+  input[type="tel"]:hover {
+    background: rgba(255, 255, 255, 0.260);
+  }
+  input[type="text"]:focus,
+  input[type="tel"]:focus {
+    border: 1.9px solid wheat;
+    background: rgba(255, 255, 255, 0.260);
+  }
+  
+  input[type="password"] {
+    letter-spacing: 1px;
+  }
+
+
+  .nextBtn,
+  .prevBtn,
+  .submitBtn {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 7px;
+    background-color: transparent;
+    color: wheat;
+    border: 2px solid wheat;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Estedad', sans-serif;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .nextBtn:hover,
+  .prevBtn:hover,
+  .submitBtn:hover {
+    background-color: wheat;
+    transform: scale(1.02);
+    color: #363636;
+  }
+
+
+  .slide {
+    display: block;
+}
+
+  #carBrand input[type="radio"] {
+    display: none;
+}
+
+#carBrand {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    unicode-bidi: isolate;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: 'Estedad', sans-serif; 
+}
+
+#carBrand input[type="radio"]:checked + label {
+    background-color: wheat;
+    color: rgb(73, 73, 73);
+}
+
+#carBrand label {
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid wheat;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: .3s ease-in-out;
+}
+
+#carBrand label:hover {
+  background-color: #9f9f9f46;
+}
+
+#carModelGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.carItem.selected {
+    border-color: wheat;
+    background-color: wheat;
+    color: rgb(60, 60, 60);
+}
+
+.carItem {
+    position: relative;
+    border: 1px solid wheat;
+    border-radius: 1rem;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.carItem:hover {
+  transform: scale(1.02);
+  background-color:  wheat;
+  color: rgb(60, 60, 60);
+}
+
+.carBox {
+    position: relative;
+}
+
+.info-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.carItem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#buyingTerm input[type="radio"] {
+  display: none;
+}
+
+#buyingTerm {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+#buyingTerm input[type="radio"]:checked + label {
+  background-color: wheat;
+  color: rgb(60, 60, 60);
+}
+
+#buyingTerm label:hover {
+  transform: scale(1.1);
+  background-color: #6969697c;
+}
+
+#buyingTerm label img {
+  width: 40px;
+  height: 40px;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+#buyingTerm label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid wheat;
+  border-radius: 10px;
+  width: 100px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+input[type="radio" i] {
+  background-color: initial;
+  cursor: default;
+  appearance: auto;
+  margin: 3px 3px 0px 5px;
+}

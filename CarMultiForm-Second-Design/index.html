@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fa"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> سامانه ثبت نام خودرو - گروه خودرویی ستوده</title>
+    <link href="https://v1.fontapi.ir/css/Estedad:100;200;300;400;500;600" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="ajax/papaparse.min.js"></script>
+</head>
+<body>
+
+<div id="multiForm">
+    <!-- Slide 1: User Info -->
+    <div class="slide active">
+        <h3>مرحله ۱:اطلاعات شخصی</h3>
+        <label for="firstName">نام</label>
+        <input id="firstName" required type="text" placeholder=""/>
+        <p class="error" id="firstNameError"></p>
+
+        <label for="lastName">نام خانوادگی</label>
+        <input id="lastName" required type="text" placeholder=""/>
+        <p class="error" id="lastNameError"></p>
+        
+        <label for="mobileNumber">شماره موبایل</label>
+        <input id="mobileNumber" pattern="^(\+98|0)?9\d{9}$" placeholder="09123456789" required type="tel"/>
+        <p class="error" id="mobileNumberError"></p>
+        <button id="nextButtonStep1" class="nextBtn">انتخاب خودرو</button>
+    </div>
+
+    <!-- Slide 2: Select Car Brand and Models -->
+    <div class="slide">
+        <h3>مرحله ۲: انتخاب برند و مدل خودرو</h3>
+        <label>برند خودرو</label>
+        <div id="carBrand">
+            <input type="radio" name="carBrand" value="فونیکس" id="فونیکس">
+            <label for="فونیکس">فونیکس</label>
+            <input type="radio" name="carBrand" value="MVM" id="mvm">
+            <label for="mvm">MVM</label>
+            <input type="radio" name="carBrand" value="آرین موتور" id="آرین موتور">
+            <label for="آرین موتور">آرین موتور</label>
+            <input type="radio" name="carBrand" value="کرمان موتور" id="کرمان موتور">
+            <label for="کرمان موتور">کرمان موتور</label>
+            <input type="radio" name="carBrand" value="اکستریم" id="اکستریم">
+            <label for="اکستریم">اکستریم</label>
+            <input type="radio" name="carBrand" value="ماموت خودرو" id="ماموت خودرو">
+            <label for="ماموت خودرو">ماموت خودرو</label>
+        </div> <!-- Car brands will be dynamically generated here -->
+        <p class="error" id="carBrandError"></p>
+        <div id="carModelGrid">
+            <div class="carItem">
+                <div class="carBox">
+                    <a href="https://kerman.sotoodeh.ir/car/jacj4" class="infoIcon" target="_blank" title="اطلاعات کامل خودرو"></a>
+                    <img src="images/cars/jac-j4.png" alt="JAC J4">
+                    <p>JAC J4</p>
+                    <p>۸۸۵،۰۰۰،۰۰۰ تومان</p>
+                </div>
+            </div>
+            <div class="carItem">
+                <div class="carBox">
+                    <a href="https://kerman.sotoodeh.ir/car/kmcj7" class="infoIcon" target="_blank" title="اطلاعات کامل خودرو"></a>
+                    <img src="images/cars/kmc-j7.png" alt="KMC J7">
+                    <p>KMC J7</p>
+                    <p>۱،۳۸۲،۰۰۰،۰۰۰ تومان</p>
+                </div>
+            </div>
+            <div class="carItem">
+                <div class="carBox">
+                    <a href="https://kerman.sotoodeh.ir/car/KMCJ7EV" class="infoIcon" target="_blank" title="اطلاعات کامل خودرو"></a>
+                    <img src="images/cars/kmc-ej7.png" alt="KMC EJ7">
+                    <p>KMC EJ7</p>
+                    <p>۱،۳۲۵،۰۰۰،۰۰۰ تومان</p>
+                </div>
+            </div>
+            <div class="carItem">
+                <div class="carBox">
+                    <a href="https://kerman.sotoodeh.ir/car/KMCJ7EVplus" class="infoIcon" target="_blank" title="اطلاعات کامل خودرو"></a>
+                    <img src="images/cars/kmc-ej7+.png" alt="KMC EJ7 +">
+                    <p>KMC EJ7 +</p>
+                    <p>۱،۷۰۰،۰۰۰،۰۰۰ تومان</p>
+                </div>
+            </div>
+            <div class="carItem">
+                <div class="carBox">
+                    <a href="https://kerman.sotoodeh.ir/car/kmct8" class="infoIcon" target="_blank" title="اطلاعات کامل خودرو"></a>
+                    <img src="images/cars/kmc-t8.png" alt="KMC T8">
+                    <p>KMC T8</p>
+                    <p>۱،۶۹۷،۰۰۰،۰۰۰ تومان</p>
+                </div>
+            </div>
+            <div class="carItem">
+                <div class="carBox">
+                    <a href="https://kerman.sotoodeh.ir/car/kmct9" class="infoIcon" target="_blank" title="اطلاعات کامل خودرو"></a>
+                    <img src="images/cars/kmc-t9.png" alt="KMC T9">
+                    <p>KMC T9</p>
+                    <p>۲،۱۷۰،۰۰،۰۰۰ تومان</p>
+                </div>
+            </div>
+            <div class="carItem">
+                <div class="carBox">
+                    <a href="https://kerman.sotoodeh.ir/car/Kmcx5" class="infoIcon" target="_blank" title="اطلاعات کامل خودرو"></a>
+                    <img src="images/cars/kmc-x5.png" alt="KMC X5">
+                    <p>KMC X5</p>
+                    <p>۱،۴۷۵،۰۰۰،۰۰۰ تومان</p>
+                </div>
+            </div>
+            <div class="carItem">
+                <div class="carBox">
+                    <a href="https://kerman.sotoodeh.ir/car/KMCA5" class="infoIcon" target="_blank" title="اطلاعات کامل خودرو"></a>
+                    <img src="images/cars/kmc-a5.png" alt="KMC A5">
+                    <p>KMC A5</p>
+                    <p>۱،۴۱۵،۰۰۰،۰۰۰ تومان</p>
+                </div>
+            </div>
+            <div class="carItem">
+                <div class="carBox">
+                    <a href="https://kerman.sotoodeh.ir/car/BACX3PRO" class="infoIcon" target="_blank" title="اطلاعات کامل خودرو"></a>
+                    <img src="images/cars/bac-x3-pro.png" alt="BAC X3 Pro">
+                    <p>BAC X3 Pro</p>
+                    <p>۱،۰۵۰،۰۰۰،۰۰۰ تومان</p>
+                </div>
+            </div>
+            <div class="carItem">
+                <div class="carBox">
+                    <a href="https://kerman.sotoodeh.ir/car/kmceagle" class="infoIcon" target="_blank" title="اطلاعات کامل خودرو"></a>
+                    <img src="images/cars/kmc-eagle.png" alt="KMC eagle">
+                    <p>KMC eagle</p>
+                    <p> ۹۴۵،۰۰۰،۰۰۰ تومان</p>
+                </div>
+            </div>
+        </div>
+        <p class="error" id="carModelError"></p>
+        <button id="completeInfoButton" class="nextBtn">تکمیل اطلاعات</button>
+        <button id="prevButtonStep2" class="prevBtn">قبلی</button>
+    </div>
+
+    <!-- Slide 3: User Details -->
+    <div class="slide">
+        <h3>مرحله ۳: اطلاعات تکمیلی</h3>
+        <label for="state">استان</label>
+        <input id="state" list="states" required type="text"/>
+        <datalist id="states">
+            <!-- Add your options here -->
+            <option value="آذربایجان شرقی"></option>
+            <option value="آذربایجان غربی"></option>
+            <option value="اردبیل"></option>
+            <option value="اصفهان"></option>
+            <option value="البرز"></option>
+            <option value="ایلام"></option>
+            <option value="بوشهر"></option>
+            <option value="تهران"></option>
+            <option value="چهارمحال و بختیاری"></option>
+            <option value="خراسان جنوبی"></option>
+            <option value="خراسان رضوی"></option>
+            <option value="خراسان شمالی"></option>
+            <option value="خوزستان"></option>
+            <option value="زنجان"></option>
+            <option value="سمنان"></option>
+            <option value="سیستان و بلوچستان"></option>
+            <option value="فارس"></option>
+            <option value="قزوین"></option>
+            <option value="قم"></option>
+            <option value="کردستان"></option>
+            <option value="کرمان"></option>
+            <option value="کرمانشاه"></option>
+            <option value="کهگیلویه و بویراحمد"></option>
+            <option value="گلستان"></option>
+            <option value="گیلان"></option>
+            <option value="لرستان"></option>
+            <option value="مازندران"></option>
+            <option value="مرکزی"></option>
+            <option value="هرمزگان"></option>
+            <option value="همدان"></option>
+            <option value="یزد"></option>
+        </datalist>
+
+        <p class="error" id="stateError">&nbsp;</p>
+        <label for="ssn">کد ملی</label>
+        <input id="ssn" pattern="^\d{10}$" placeholder="1234567890" required type="text"/>
+        <p class="error" id="ssnError">&nbsp;</p>
+        <label>نوع خرید</label>
+
+        <div id="buyingTerm">
+            <input id="cash" name="buyingTerm" required type="radio" value="Cash"/>
+            <label for="cash">
+                <img alt="نقدی" src="images/cash-icon.png"/> نقدی
+            </label>
+            <input id="trade" name="buyingTerm" type="radio" value="Trade-in"/>
+            <label for="trade">
+                <img alt="تعویض" src="images/trade-icon.png"/> تعویض
+            </label>
+            <input id="lease" name="buyingTerm" type="radio" value="Lease"/>
+            <label for="lease">
+                <img alt="اجاره" src="images/lease-icon.png"/> قسطی
+            </label>
+        </div>
+
+        <!-- Additional Field for Trade-In -->
+        <div id="tradeInField" style="display:none;">
+            <label for="currentCar">خودروی فعلی شما</label>
+            <input id="currentCar" type="text" placeholder="نام خودروی فعلی"/>
+            <p class="error" id="currentCarError">&nbsp;</p>
+        </div>
+
+        <p class="error" id="buyingTermError">&nbsp;</p>
+        <button id="submitButton" class="submitBtn">ثبت نهایی و ارسال</button>
+        <button id="prevButtonStep3" class="prevBtn">قبلی</button>
+    </div>
+
+    <!-- Final Slide: Thank You -->
+    <div class="slide">
+        <h3>از ارسال اطلاعات شما متشکریم!</h3>
+        <p>شماره پیگیری شما: <span id="trackingNumber"></span></p>
+        <p>پیامک تایید برای شما ارسال شد. به زودی با شما تماس خواهیم گرفت.</p>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script src="gtag/js"></script>
+
+<script src="serve/retargeting.js"></script>
+
+<script src="rg_woebegone/rg.complete.js"></script>
+
+<!-- scroll reveal -->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+</body>
+</html>
