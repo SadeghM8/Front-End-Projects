@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #29272b;
+    --white: #bebebe;
+    --primary: #32ce9a;
+    --placeholder: #6a666c;
+    --main: #755cff;
+}
+
+body {
+    font-family: 'Estedad', sans-serif;
+    background-color: #2a55ff;
+    margin: 0;
+    padding: 0;
+    place-items: center;
+}
+
+#multiForm {
+    direction: rtl;
+    width: 100%;
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 17px;
+    
+    transition: .6s ease-in-out;
+}
+#multiForm:hover {
+    transform: scale(1.002);
+    box-shadow: 0px 0px 10px #ffffff;
+}
+  
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color:  #0062ca;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.error {
+    color: rgb(233, 45, 45);
+}
+  
+.form-group {
+    margin-bottom: 50px;
+}
+  
+label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+  
+input[type="text"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-family: 'Estedad', sans-serif;
+    line-height: 1.5;
+    outline: none;
+    transition: .3s ease-in-out;
+}
+  
+input[type="password"] {
+    letter-spacing: 1px;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus{
+    border: 1px solid #007bff;
+}
+
+
+
+.nextBtn,
+.prevBtn,
+.submitBtn {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 7px;
+    background-color: #0c92ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Estedad', sans-serif;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+  
+.nextBtn:hover,
+.prevBtn:hover,
+.submitBtn:hover {
+    background-color: #0048ff;
+    transform: scale(1.02);
+}
+
+
+.slide {
+    display: block;
+}
+
+#carBrand input[type="radio"] {
+    display: none;
+}
+
+#carBrand {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    unicode-bidi: isolate;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: 'Estedad', sans-serif; 
+}
+
+#carBrand input[type="radio"]:checked + label {
+    background-color: #007bff;
+    color: white;
+}
+
+#carBrand label {
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: .3s ease-in-out;
+}
+
+#carBrand label:hover {
+  background-color: #ccc;
+}
+
+#carModelGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.carItem.selected {
+    border-color: #2e1fff;
+    background-color: #958eff;
+}
+
+.carItem {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.carItem:hover {
+  transform: scale(1.02);
+  background-color:  #007bff;
+  color: white;
+}
+
+.carBox {
+    position: relative;
+}
+
+.info-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.carItem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#buyingTerm input[type="radio"] {
+  display: none;
+}
+
+#buyingTerm {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+#buyingTerm input[type="radio"]:checked + label {
+  background-color: #007bff;
+  color: white;
+}
+
+#buyingTerm label:hover {
+  transform: scale(1.1);
+}
+
+#buyingTerm label img {
+  width: 40px;
+  height: 40px;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+#buyingTerm label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+input[type="radio" i] {
+  background-color: initial;
+  cursor: default;
+  appearance: auto;
+  margin: 3px 3px 0px 5px;
+}
