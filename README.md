@@ -1,6 +1,6 @@
 # 🖥️ Front-End Projects
 
-A collection of **mini front-end projects**, mostly single-page static websites.  
+A collection of my **mini front-end projects**, mostly single-page static websites.  
 Each project was built as a **practice exercise** to explore layouts, responsiveness, interactivity, and creative designs.
 
 ---
